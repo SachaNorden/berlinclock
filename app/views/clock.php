@@ -8,20 +8,24 @@
             <td><?php  echo 'Y'?></td>
         </tr>
         <tr>
-            <?php  foreach ($fivehours as $i => $value) ?>
+            <?php for($i=0;$i<4;$i++) { ?>
             <td> <?php  echo 'R'?> </td>
+            <?php } ?>
         </tr>
         <tr>
-            <?php  foreach ($hours as $i => $value) ?>
+            <?php for($i=0;$i<4;$i++){ ?>
             <td> <?php  echo 'R'?> </td>
+            <?php } ?>
         </tr>
         <tr>
-            <?php  foreach ($fiveminutes as $i => $value) ?>
+            <?php  for($i=0;$i<11;$i++){ ?>
             <td> <?php  echo 'R'?> </td>
+            <?php } ?>
         </tr>
         <tr>
-            <?php  foreach ($minutes as $i => $value) ?>
+            <?php  for ($i=0;$i<4;$i++){ ?>
             <td> <?php  echo 'R'?> </td>
+            <?php } ?>
         </tr>
     </table>
 </section>
