@@ -8,23 +8,23 @@
             <td><?php  echo $secondeCase?></td>
         </tr>
         <tr>
-            <?php for($i=0;$i<4;$i++) { ?>
-            <td> <?php  echo $fivehoursCase?> </td>
+            <?php for($i=0;$i<$fivehoursCase;$i++) { ?>
+            <td> <?php  echo 1?> </td>
             <?php } ?>
         </tr>
         <tr>
-            <?php for($i=0;$i<4;$i++){ ?>
-            <td> <?php  echo $hoursCase?> </td>
+            <?php for($i=0;$i<$hoursCase;$i++){ ?>
+            <td> <?php  echo 1?> </td>
             <?php } ?>
         </tr>
         <tr>
-            <?php  for($i=0;$i<11;$i++){ ?>
-            <td> <?php  echo $fiveminutesCase ?> </td>
+            <?php  for($i=0;$i<$fiveminutesCase;$i++){ ?>
+            <td> <?php  echo 1 ?> </td>
             <?php } ?>
         </tr>
         <tr>
-            <?php  for ($i=0;$i<4;$i++){ ?>
-            <td> <?php  echo $minutesCase?> </td>
+            <?php  for ($i=0;$i<$minutesCase;$i++){ ?>
+            <td> <?php  echo 1?> </td>
             <?php } ?>
         </tr>
     </table>
