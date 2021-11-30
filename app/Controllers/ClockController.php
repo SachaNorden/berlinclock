@@ -15,7 +15,10 @@ class ClockController {
         echo(" ");
         echo ($seconde);
 
-        $secondeCase='0';
+        if($seconde%2==0){
+            $secondeCase='0';
+        }
+        else $secondeCase='1';
 
         $fivehoursCase=$hours/5;
         $fivehoursCase=floor($fivehoursCase);
