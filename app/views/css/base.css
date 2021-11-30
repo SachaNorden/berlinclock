@@ -25,6 +25,7 @@ body {
     line-height: 1.25;
     color: black;
     background: white;
+    text-align: center;
 }
 
 /* Titres */
@@ -152,4 +153,7 @@ pre strong {
 
 #copyright a:hover, #copyright a:focus {
     text-decoration: underline;
+}
+#center{
+    text-align: center;
 }
