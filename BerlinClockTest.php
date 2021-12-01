@@ -14,7 +14,7 @@ class BerlinClockTest extends TestCase
         $clock = new BerlinClock();
 
         // Act
-        $actual = $clock->getSeconde();
+        $actual = $clock->getSecondes();
 
         // Assert
         $this->assertEquals(true, $actual);
