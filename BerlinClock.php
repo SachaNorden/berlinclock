@@ -1,28 +1,36 @@
 <?php
 
-$fivehours=4;
-$hours=4;
-$fiveminutes=11;
-$minutes=4;
+class BerlinClock
+{
 
-echo 'Y';
-echo "<br/>";
+    private $seconde = true;
+    private $fiveHours = 4;
+    private $hours = 4;
+    private $fiveMinutes = 11;
+    private $minutes = 4;
 
-for($i=0;$i<4;$i++) {
-    echo 'R';
+
+    function getSecondes()
+    {
+        return $this->seconde;
+    }
+
+    function getFiveHours()
+    {
+        return $this->fiveHours;
+    }
+
+    function getHours(){
+        return $this->hours;
+    }
+
+    function getFiveMinutes()
+    {
+        return $this->fiveMinutes;
+    }
+
+    function getMinutes(){
+        return $this->minutes;
+    }
 }
-echo "<br/>";
 
-for($i=0;$i<4;$i++){
-    echo 'R';
-}
-echo "<br/>";
-
-for($i=0;$i<11;$i++){
-    echo 'R';
-}
-echo "<br/>";
-
-for ($i=0;$i<4;$i++){
-    echo 'R';
-}
