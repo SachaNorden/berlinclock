@@ -133,4 +133,26 @@ class BerlinClockTest extends TestCase
         $this->assertEquals("ROOO", $actual4);
         $this->assertEquals("RRRO", $actual5);
     }
+
+    public function testWholeClock(){
+        $date1 = new DateTime("00:00:00");
+        $date2 = new DateTime("23:59:59");
+        $date3 = new DateTime("16:50:06");
+        $date4 = new DateTime("11:37:01");
+
+        $clock1 = new BerlinClock($date1);
+        $clock2 = new BerlinClock($date2);
+        $clock3 = new BerlinClock($date3);
+        $clock4 = new BerlinClock($date4);
+
+        $actual1 = $clock1->getClock();
+        $actual2 = $clock2->getClock();
+        $actual3 = $clock3->getClock();
+        $actual4 = $clock4->getClock();
+
+        $this->assertEquals("YOOOOOOOOOOOOOOOOOOOOOOO", $actual1);
+        $this->assertEquals("ORRRRRRROYYRYYRYYRYYYYYY", $actual2);
+        $this->assertEquals("YRRROROOOYYRYYRYYRYOOOOO", $actual3);
+        $this->assertEquals("ORROOROOOYYRYYRYOOOOYYOO", $actual4);
+    }
 }

@@ -2,6 +2,12 @@
 
 class BerlinClock
 {
+    /*
+     * Groupe:
+     * DEKIMPE Thomas
+     * NORDEN Sacha
+     * PIETTE Guillaume (a rejoint plus tard, n'avait pas de groupe)
+     */
     private DateTime $actualDate;
     private int $seconde;
     private int  $fiveHours;
@@ -84,6 +90,17 @@ class BerlinClock
                 $returnString = $returnString."O";
         }
         return $returnString;
+    }
+
+    //sec - fiveh - singh - fivem - singm
+    public function getClock(): string
+    {
+        $returnString = "";
+        $returnString = $returnString.$this->getSecondes();
+        $returnString = $returnString.$this->getFiveHours();
+        $returnString = $returnString.$this->getHours();
+        $returnString = $returnString.$this->getFiveMinutes();
+        return $returnString.$this->getMinutes();
     }
 }
 
