@@ -23,12 +23,15 @@ class BerlinClock
 
     public function getActualDate(): string
     {
+
         return $this->actualDate->format("H:i:s");
     }
 
-    public function getSecondes(): int
+    public function getSecondes(): string
     {
-        return $this->seconde;
+        if($this->seconde == 1)
+            return "O";
+        return "Y";
     }
 
     public function getFiveHours(): int
