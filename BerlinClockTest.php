@@ -101,7 +101,7 @@ class BerlinClockTest extends TestCase
         $actual5 = $clock5->getHours();
 
         $this->assertEquals("OOOO", $actual1);
-        $this->assertEquals("RRR0", $actual2);
+        $this->assertEquals("RRRO", $actual2);
         $this->assertEquals("RROO", $actual3);
         $this->assertEquals("RRRO", $actual4);
         $this->assertEquals("RRRR", $actual5);
