@@ -2,41 +2,52 @@
 
 class BerlinClock
 {
-    private $seconde;
-    private $fiveHours = 4;
-    private $hours = 4;
-    private $fiveMinutes = 11;
-    private $minutes = 4;
+    private DateTime $actualDate;
+    private int $seconde;
+    private int  $fiveHours;
+    private int $hours;
+    private int $fiveMinutes;
+    private int $minutes;
 
-    public function __construct(){
-        $this->seconde = (int)date("s")%2 == 1;
-        $this->fiveHours = floor((int)date("h") / 5);
-        $this->hours = (int)date("h") % 5;
+    public function __construct($date)
+    {
 
-        $this->fiveMinutes = floor((int)date("i") / 5);
-        $this->minutes = (int)date("i") % 5;
+        $this->actualDate = $date;
+        $this->seconde = (int) $date->format("s")%2;
+        $this->fiveHours = floor((int) $date->format("H") / 5);
+        $this->hours = (int) $date->format("H") % 5;
+
+        $this->fiveMinutes = floor((int)$date->format("i") / 5);
+        $this->minutes = (int)$date->format("i") % 5;
     }
 
-    function getSecondes()
+    public function getActualDate(): string
+    {
+        return $this->actualDate->format("H:i:s");
+    }
+
+    public function getSecondes(): int
     {
         return $this->seconde;
     }
 
-    function getFiveHours()
+    public function getFiveHours(): int
     {
         return $this->fiveHours;
     }
 
-    function getHours(){
+    public function getHours(): int
+    {
         return $this->hours;
     }
 
-    function getFiveMinutes()
+    public function getFiveMinutes(): int
     {
         return $this->fiveMinutes;
     }
 
-    function getMinutes(){
+    public function getMinutes(): int
+    {
         return $this->minutes;
     }
 }

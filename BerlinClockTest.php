@@ -4,45 +4,62 @@ namespace BerlinClock;
 require 'BerlinClock.php';
 
 use BerlinClock;
+use DateTime;
 use PHPUnit\Framework\TestCase;
 
 class BerlinClockTest extends TestCase
 {
     public function testSeconde()
     {
-        // Arrange
-        $clock = new BerlinClock();
+        $date = new DateTime("now");
+        $clock = new BerlinClock($date);
 
-        // Act
         $actual = $clock->getSecondes();
 
-        // Assert
-        $this->assertEquals((int)date("s")%2 == 1, $actual);
+        $this->assertEquals((int)date("s")%2, $actual);
     }
 
     public function testFiveMinutes()
     {
-        // Arrange
-        $clock = new BerlinClock();
+        $date = new DateTime("now");
+        $clock = new BerlinClock($date);
 
-        // Act
         $actual = $clock->getFiveMinutes();
-        $expected = round((int)date("i") / 5);
+        $expected = floor((int)date("i") / 5);
 
-        // Assert
         $this->assertEquals($expected, $actual);
     }
 
     public function testMinutes()
     {
-        // Arrange
-        $clock = new BerlinClock();
+        $date = new DateTime("now");
+        $clock = new BerlinClock($date);
 
-        // Act
         $actual = $clock->getMinutes();
-        $expected = round((int)date("i") % 5);
+        $expected = (int)date("i") % 5;
 
-        // Assert
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testFiveHours()
+    {
+        $date = new DateTime("now");
+        $clock = new BerlinClock($date);
+
+        $actual = $clock->getFiveHours();
+        $expected = floor((int)date("H") / 5);
+
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testHours()
+    {
+        $date = new DateTime("now");
+        $clock = new BerlinClock($date);
+
+        $actual = $clock-> getHours();
+        $expected = (int)date("H") % 5;
+
         $this->assertEquals($expected, $actual);
     }
 }
